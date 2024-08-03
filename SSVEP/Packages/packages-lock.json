@@ -1,5 +1,12 @@
 {
   "dependencies": {
+    "com.labstreaminglayer.lsl4unity": {
+      "version": "https://github.com/labstreaminglayer/LSL4Unity.git",
+      "depth": 0,
+      "source": "git",
+      "dependencies": {},
+      "hash": "75d54ab160edaf02d2173350bbd91f1afbdb66d8"
+    },
     "com.unity.collab-proxy": {
       "version": "1.17.7",
       "depth": 0,

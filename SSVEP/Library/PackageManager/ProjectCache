@@ -5,16 +5,16 @@ m_ProjectFiles:
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 638580772759090956
-    m_Hash: 1010242877
+      ticks: 638582657634393683
+    m_Hash: 318296715
   m_LockFileStatus:
     m_FilePath: C:/git/SSVEP-Unity/SSVEP/Packages/packages-lock.json
     m_PathExists: 1
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 638580773124903659
-    m_Hash: 1035663092
+      ticks: 638582637025382186
+    m_Hash: 1552103640
 m_EmbeddedPackageManifests:
   m_ManifestsStatus: {}
 m_LocalPackages:
@@ -22,6 +22,52 @@ m_LocalPackages:
 m_ProjectPath: C:/git/SSVEP-Unity/SSVEP/Packages
 m_EditorVersion: 2021.3.16f1 (4016570cf34f)
 m_ResolvedPackages:
+- packageId: com.labstreaminglayer.lsl4unity@https://github.com/labstreaminglayer/LSL4Unity.git
+  testable: 0
+  isDirectDependency: 1
+  version: 1.16.0
+  source: 5
+  resolvedPath: C:\git\SSVEP-Unity\SSVEP\Library\PackageCache\com.labstreaminglayer.lsl4unity@75d54ab160
+  assetPath: Packages/com.labstreaminglayer.lsl4unity
+  name: com.labstreaminglayer.lsl4unity
+  displayName: labstreaminglayer for Unity
+  author:
+    name: Chadwick Boulay
+    email: chadwick.boulay@gmail.com
+    url: 
+  category: 
+  type: 
+  description: labstreaminglayer for Unity
+  status: 0
+  errors: []
+  versions:
+    all: []
+    compatible: []
+    verified: 
+  dependencies: []
+  resolvedDependencies: []
+  keywords: []
+  registry:
+    id: main
+    name: 
+    url: https://packages.unity.com
+    scopes: []
+    isDefault: 1
+    capabilities: 7
+    configSource: 0
+  hideInEditor: 1
+  isAssetStorePackage: 0
+  datePublishedTicks: 0
+  documentationUrl: https://github.com/labstreaminglayer/LSL4Unity
+  hasRepository: 0
+  repository:
+    type: 
+    url: 
+    revision: 
+    path: 
+  unityLifecycle:
+    version: 
+    nextVersion: 
 - packageId: com.unity.collab-proxy@1.17.7
   testable: 0
   isDirectDependency: 1
