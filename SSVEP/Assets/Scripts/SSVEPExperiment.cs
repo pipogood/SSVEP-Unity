@@ -78,7 +78,7 @@ public class SSVEPExperiment : MonoBehaviour
             channel_format_t.cf_string, hash.ToString());
         outlet = new StreamOutlet(streamInfo);
 
-        serialPort = new SerialPort("COM3", 115200);
+        serialPort = new SerialPort("COM5", 115200);
 
         try
         {
@@ -118,7 +118,7 @@ public class SSVEPExperiment : MonoBehaviour
                 delayText.enabled = false; // Hide the delay text
                 if (outlet != null)
                 {
-                    SendSerrialPortTrigger(101);
+                    SendSerrialPortTrigger(1);
                     sample[0] = "Trial_Begin";
                     outlet.push_sample(sample);
                 }
@@ -148,13 +148,13 @@ public class SSVEPExperiment : MonoBehaviour
                     // Reset the timer and move to the next index after the delay
                     if (currentIndex < randomNumbers.Length)
                     {
-                        SendSerrialPortTrigger(101);
+                        SendSerrialPortTrigger(1);
                         sample[0] = "Trial_Begin";
                         outlet.push_sample(sample);
                     }
                     else
                     {
-                        SendSerrialPortTrigger(401);
+                        SendSerrialPortTrigger(40);
                         sample[0] = "End_Experiment";
                         outlet.push_sample(sample);
                     }
@@ -182,7 +182,7 @@ public class SSVEPExperiment : MonoBehaviour
                         }
                         else
                         {
-                            HandleBlinking(blinkImgLeft, intervalLeft, "SSVEPLeft", 201);
+                            HandleBlinking(blinkImgLeft, intervalLeft, "SSVEPLeft", 2);
                         }
                     }
                     else if (currentRandomNumber == 1)
@@ -193,7 +193,7 @@ public class SSVEPExperiment : MonoBehaviour
                         }
                         else
                         {
-                            HandleBlinking(blinkImgRight, intervalRight, "SSVEPRight", 202);
+                            HandleBlinking(blinkImgRight, intervalRight, "SSVEPRight", 4);
                         }
                     }
                     else if (currentRandomNumber == 2)
@@ -204,7 +204,7 @@ public class SSVEPExperiment : MonoBehaviour
                         }
                         else
                         {
-                            HandleBlinking(blinkImgUp, intervalUp, "SSVEPUp", 203);
+                            HandleBlinking(blinkImgUp, intervalUp, "SSVEPUp", 8);
                         }
                     }
                     else
@@ -215,7 +215,7 @@ public class SSVEPExperiment : MonoBehaviour
                         }
                         else
                         {
-                            HandleBlinking(blinkImgDown, intervalDown, "SSVEPDown", 204);
+                            HandleBlinking(blinkImgDown, intervalDown, "SSVEPDown", 10);
                         }
                     }
                 }
@@ -223,7 +223,7 @@ public class SSVEPExperiment : MonoBehaviour
                 else
                 {
                     // Reset the timer and move to the next index after the duration
-                    SendSerrialPortTrigger(301);
+                    SendSerrialPortTrigger(20);
                     sample[0] = "End_of_trial";
                     outlet.push_sample(sample);
                     indexTimer = 0f;
