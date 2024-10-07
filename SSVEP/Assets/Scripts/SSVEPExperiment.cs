@@ -1,6 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
-using System.IO.Ports; // Config is into Edit>ProjectSettings>Player>ApiCompatibilityLevel to .NET framework
+//using System.IO.Ports; // Config is into Edit>ProjectSettings>Player>ApiCompatibilityLevel to .NET framework
 using UnityEngine;
 using UnityEngine.UI;
 using LSL;
@@ -65,7 +65,7 @@ public class SSVEPExperiment : MonoBehaviour
     private StreamOutlet outlet;
     private string[] sample = { "" };
 
-    private SerialPort serialPort;
+    //private SerialPort serialPort;
 
     // Start is called before the first frame update
     void Start()
@@ -78,17 +78,17 @@ public class SSVEPExperiment : MonoBehaviour
             channel_format_t.cf_string, hash.ToString());
         outlet = new StreamOutlet(streamInfo);
 
-        serialPort = new SerialPort("COM5", 115200);
+        //serialPort = new SerialPort("COM5", 115200);
 
-        try
-        {
-            serialPort.Open();
-            Debug.Log("Serial port opened successfully.");
-        }
-        catch (System.Exception e)
-        {
-            Debug.LogError("Error opening serial port: " + e.Message);
-        }
+        //try
+        //{
+        //    serialPort.Open();
+        //    Debug.Log("Serial port opened successfully.");
+        //}
+        //catch (System.Exception e)
+        //{
+        //    Debug.LogError("Error opening serial port: " + e.Message);
+        //}
 
         //// Initialize the array with the desired number of random numbers
         GenerateEqualRandomNumbers();
@@ -118,7 +118,7 @@ public class SSVEPExperiment : MonoBehaviour
                 delayText.enabled = false; // Hide the delay text
                 if (outlet != null)
                 {
-                    SendSerrialPortTrigger(1);
+                    //SendSerrialPortTrigger(1);
                     sample[0] = "Trial_Begin";
                     outlet.push_sample(sample);
                 }
@@ -130,10 +130,10 @@ public class SSVEPExperiment : MonoBehaviour
             if (currentIndex >= randomNumbers.Length)
             {
                 // Indicate completion
-                if (serialPort != null && serialPort.IsOpen)
-                {
-                    serialPort.Close();
-                }
+                //if (serialPort != null && serialPort.IsOpen)
+                //{
+                //    serialPort.Close();
+                //}
 
                 return;
             }
@@ -148,13 +148,13 @@ public class SSVEPExperiment : MonoBehaviour
                     // Reset the timer and move to the next index after the delay
                     if (currentIndex < randomNumbers.Length)
                     {
-                        SendSerrialPortTrigger(1);
+                        //SendSerrialPortTrigger(1);
                         sample[0] = "Trial_Begin";
                         outlet.push_sample(sample);
                     }
                     else
                     {
-                        SendSerrialPortTrigger(40);
+                        //SendSerrialPortTrigger(40);
                         sample[0] = "End_Experiment";
                         outlet.push_sample(sample);
                     }
@@ -223,7 +223,7 @@ public class SSVEPExperiment : MonoBehaviour
                 else
                 {
                     // Reset the timer and move to the next index after the duration
-                    SendSerrialPortTrigger(20);
+                    //SendSerrialPortTrigger(20);
                     sample[0] = "End_of_trial";
                     outlet.push_sample(sample);
                     indexTimer = 0f;
@@ -282,7 +282,7 @@ public class SSVEPExperiment : MonoBehaviour
     {
         if (SSVEPTrigger)
         {
-            SendSerrialPortTrigger(nowCond);
+            //SendSerrialPortTrigger(nowCond);
             sample[0] = direction;
             outlet.push_sample(sample);
         }
@@ -292,6 +292,8 @@ public class SSVEPExperiment : MonoBehaviour
 
         if (elapsedTime >= interval / 2f) // Check if it's time to switch colors
         {
+            //Debug.Log(elapsedTime);
+            //Debug.Log(interval / 2f);
             Img_direct.color = isStartColor ? endColor : startColor;// Toggle the color
             isStartColor = !isStartColor; // Toggle the color flag
             elapsedTime = 0f; // Reset the elapsed time
@@ -300,12 +302,12 @@ public class SSVEPExperiment : MonoBehaviour
         SSVEPTrigger = false;
     }
 
-    private void SendSerrialPortTrigger(int nowCond)
-    {
-        if (serialPort.IsOpen)
-        {
-            byte[] triggerBytes = new byte[] { (byte)nowCond };
-            serialPort.Write(triggerBytes, 0, 1);
-        }
-    }
+    //private void SendSerrialPortTrigger(int nowCond)
+    //{
+    //    if (serialPort.IsOpen)
+    //    {
+    //        byte[] triggerBytes = new byte[] { (byte)nowCond };
+    //        serialPort.Write(triggerBytes, 0, 1);
+    //    }
+    //}
 }

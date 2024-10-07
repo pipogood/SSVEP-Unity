@@ -18,6 +18,8 @@ MonoBehaviour:
     - Assets/Materials.meta
     - Assets/Materials/New Material.mat
     - Assets/Materials/New Material.mat.meta
+    - Assets/NewBehaviourScript.cs
+    - Assets/NewBehaviourScript.cs.meta
     - Assets/Samples.meta
     - Assets/Samples/labstreaminglayer for Unity.meta
     - Assets/Samples/labstreaminglayer for Unity/1.16.0.meta
@@ -32,6 +34,8 @@ MonoBehaviour:
     - Assets/Scenes/SSVEP.unity
     - Assets/Scenes/SSVEP.unity.meta
     - Assets/Scripts.meta
+    - Assets/Scripts/Example.cs
+    - Assets/Scripts/Example.cs.meta
     - Assets/Scripts/PythonToUnity.cs
     - Assets/Scripts/PythonToUnity.cs.meta
     - Assets/Scripts/SSVEPExperiment.cs
@@ -131,7 +135,7 @@ MonoBehaviour:
     - ProjectSettings/VFXManager.asset
     - ProjectSettings/VersionControlSettings.asset
     - 
-    m_Values: 000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+    m_Values: 00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
   RevisionSummary: 
   ChangesSearchValue: 
   SelectedHistoryRevision: 
