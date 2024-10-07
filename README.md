@@ -2,3 +2,5 @@ This repository is the guildline Unity SSVEP Experimental design for student in 
 
 Unity world's scene:
 
+[here](https://github.com/pipogood/SSVEP-Unity/blob/main/pic1.png)
+
