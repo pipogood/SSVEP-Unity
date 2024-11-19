@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-using LSL;
+using LSL;  
 
 public class Example : MonoBehaviour
 {
@@ -51,6 +51,7 @@ public class Example : MonoBehaviour
         StreamInfo streamInfo = new StreamInfo(StreamName, StreamType, 1, LSL.LSL.IRREGULAR_RATE,
             channel_format_t.cf_string, hash.ToString());
         outlet = new StreamOutlet(streamInfo);
+
 
         GenerateEqualRandomNumbers();
         for (int i = 0; i < randomNumbers.Length; i++)
