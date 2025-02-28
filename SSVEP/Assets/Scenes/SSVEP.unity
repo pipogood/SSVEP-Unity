@@ -413,7 +413,7 @@ MonoBehaviour:
   blinkDuration: 5
   delayBeforeBlink: 1
   delayBeforeNextTrial: 2
-  numberOfTrial: 20
+  numberOfTrial: 32
 --- !u!4 &704272316
 Transform:
   m_ObjectHideFlags: 0
